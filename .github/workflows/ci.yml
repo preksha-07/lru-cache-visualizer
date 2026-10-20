@@ -21,7 +21,10 @@ jobs:
           java-version: "25"
           cache: gradle
 
-      - name: Run backend tests
+       - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+       - name: Run backend tests
         run: ./gradlew test
 
   frontend:
